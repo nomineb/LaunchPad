@@ -70,7 +70,7 @@ class BaseJob:
         executor, script_path, args = self._parse_script()
         self._code_dir = os.path.dirname(script_path)
         self._exec_line = " ".join([executor, script_path] + args \
-                + [f"--{k} {v}" for k, v in self._hp.items()])
+                        + [f"model.optimizer.lr={v}" if k == 'lr' else f"{k}={v}" for k, v in self._hp.items() if k != 'round' and k != 'exp_name'])
         self._exec_line_display = self._exec_line
         
     def _get_exp_name(self): 
