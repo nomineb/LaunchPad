@@ -27,7 +27,7 @@ def version():
 
 
 setup(
-    name='launch-pad-test',
+    name='launch-pad-sai',
     version=version(),
     description='A tool that automatically compile and launch slurm jobs \
                  based on a YAML configuration file.',
